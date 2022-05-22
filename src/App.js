@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { Tracker} from './components/ExpenseTracker/Tracker';
+import { Budgeting} from './components/BudgetTips/Budgeting';
+import {Header} from './components/Header/Header';
+import { Stocks } from './components/Stocks/Stocks';
+import {HashRouter, Routes, Route} from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     
+        <HashRouter>
+          <Header />
+          <Routes>
+            <Route path= "/" element = {<Budgeting />}></Route>
+            <Route path="/Tracker" element={<Tracker />}></Route>
+            <Route path = "/Stocks" element = {<Stocks />}></Route>
+          </Routes>
+        </HashRouter>
     </div>
   );
 }
